@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pract8.MainPage">
+    <StackLayout Orientation="Horizontal">
+    <TableView HeightRequest="700" >
+            <TableRoot x:Name="table">
+            <TableSection  Title="Персональные данные">
+                <EntryCell x:Name="Fio" Label="Фамилия" Placeholder="Введите фамилию"></EntryCell>
+                <EntryCell x:Name="Name" Label="Имя" Placeholder="Введите имя"></EntryCell>
+                <EntryCell x:Name="LastName" Label="отчество" Placeholder="Введите отчество"></EntryCell>
+                <ViewCell>
+                    <DatePicker x:Name="dateBr" Margin="15,0,15,0" DateSelected="dateBr_DateSelected"></DatePicker>
+                </ViewCell>
+                <TextCell x:Name="Age" Text="Возраст - "></TextCell>
+                <ViewCell>
+                        <StackLayout x:Name="sl1" Orientation="Horizontal" Margin="15,0,15,0">
+                        <Label Text="Пол" VerticalOptions="Center" Margin="5,0,10,0"></Label>
+                        <Picker Title="Выберите пол" >
+                            <Picker.Items>
+                                <x:String>Мужской</x:String>
+                                <x:String>Женский</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+            <TableSection x:Name="Phone" Title="Телефон">
+                <EntryCell Placeholder="Введите телефон" Keyboard="Numeric"></EntryCell>
+            </TableSection>
+            <TableSection>
+                <ViewCell>
+                    <Button Text="Добавить телефон" Clicked="Button_Clicked"></Button>
+                </ViewCell>
+            </TableSection>
+                <TableSection>
+                    <ViewCell>
+                        <Button x:Name="button1" Text="Фоточка" ImageSource="dotnet_bot.png"></Button>
+                    </ViewCell>
+                </TableSection>
+                <TableSection>
+                    <ViewCell>
+                        <Image Source="dotnet_bot.png" Aspect="AspectFit"></Image>
+                    </ViewCell>
+                </TableSection>
+        </TableRoot>
+    </TableView>
+    </StackLayout>
+</ContentPage>
